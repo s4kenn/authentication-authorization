@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/auth-middleware.js')
 
 router.get('/welcome', authMiddleware, (req, res) => {
 
-    const { userId, userName, role } = req.body
+    const { userId, userName, role } = req.userInfo
 
     res.json({
         message: 'Welcome to homepage',

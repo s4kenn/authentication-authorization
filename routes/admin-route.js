@@ -6,7 +6,7 @@ const adminMiddleware = require('../middleware/admin-middleware.js')
 
 router.get('/welcome', authMiddleware, adminMiddleware, (req, res) => {
 
-    const { userId, userName, role } = req.body
+    const { userId, userName, role } = req.userInfo
 
     res.json({
         message: 'Welcome to admin page',
